@@ -4,8 +4,6 @@ var pkg = require('./../package')
 var args = require('args')
 var slackin = require('./../dist').default
 
-console.log(process.argv)
-
 args
   .option(['p', 'port'], 'Port to listen on [$PORT or 3000]', require('hostenv').PORT || process.env.PORT || 3000)
   .option(['h', 'hostname'], 'Hostname to listen on [$HOSTNAME or 0.0.0.0]', require('hostenv').HOSTNAME || process.env.WEBSITE_HOSTNAME || '0.0.0.0')
@@ -19,7 +17,7 @@ args
   .option(['?', 'help'], 'Show the usage information')
 
 var flags = args.parse(process.argv, {
-  value: 'process.argv + <team-id> + org <api-token> + token + <google-captcha-secret> + gcaptcha_secret + <google-captcha-sitekey> + gcaptcha_sitekey',
+  value: '<team-id> <api-token> <google-captcha-secret> <google-captcha-sitekey>',
   help: false
 })
 
@@ -43,7 +41,6 @@ if (flags.help) {
 }
 
 if (!org || !token || !gcaptcha_sitekey || !gcaptcha_secret) {
-  console.log (org, '---' , token, '---' ,gcaptcha_sitekey, '---' ,gcaptcha_secret)
   args.showHelp()
 } else {
   flags.org = org
