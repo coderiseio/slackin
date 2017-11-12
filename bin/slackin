@@ -4,6 +4,8 @@ var pkg = require('./../package')
 var args = require('args')
 var slackin = require('./../dist').default
 
+console.log(process.argv)
+
 args
   .option(['p', 'port'], 'Port to listen on [$PORT or 3000]', require('hostenv').PORT || process.env.PORT || 3000)
   .option(['h', 'hostname'], 'Hostname to listen on [$HOSTNAME or 0.0.0.0]', require('hostenv').HOSTNAME || process.env.WEBSITE_HOSTNAME || '0.0.0.0')
@@ -21,13 +23,19 @@ var flags = args.parse(process.argv, {
   help: false
 })
 
-var org = args.sub[0] || process.env.SLACK_SUBDOMAIN
-var token = args.sub[1] || process.env.SLACK_API_TOKEN
+//var org = args.sub[0] || process.env.SLACK_SUBDOMAIN
+//var token = args.sub[1] || process.env.SLACK_API_TOKEN
+//var emails = process.env.EMAIL_SLACK_LIST || ''
+
+//var gcaptcha_secret = args.sub[2] || process.env.GOOGLE_CAPTCHA_SECRET
+//var gcaptcha_sitekey = args.sub[3] || process.env.GOOGLE_CAPTCHA_SITEKEY
+
+var org = equibit
+var token = xoxp-107489284322-268731415699-270958603123-a6a096a406c3f9e4b116597bc4aae4d4
 var emails = process.env.EMAIL_SLACK_LIST || ''
 
-var gcaptcha_secret = args.sub[2] || process.env.GOOGLE_CAPTCHA_SECRET
-var gcaptcha_sitekey = args.sub[3] || process.env.GOOGLE_CAPTCHA_SITEKEY
-
+var gcaptcha_secret = 6LdOYjgUAAAAAMkrXaqhgGqJaQzDPMAf6DIYZHM2
+var gcaptcha_sitekey = 6LdOYjgUAAAAACQj-qmIhrju482E17tSiA4sh8AK
 
 
 if (flags.help) {
