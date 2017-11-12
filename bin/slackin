@@ -19,7 +19,7 @@ args
   .option(['?', 'help'], 'Show the usage information')
 
 var flags = args.parse(process.argv, {
-  value: '<team-id> <api-token> <google-captcha-secret> <google-captcha-sitekey>',
+  value: 'process.argv + <team-id> + org <api-token> + token + <google-captcha-secret> + gcaptcha_secret + <google-captcha-sitekey> + gcaptcha_sitekey',
   help: false
 })
 
