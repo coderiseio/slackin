@@ -59,7 +59,7 @@
     "test": "mocha && eslint lib/**",
     "postinstall": "gulp",
     "build": "gulp",
-    "start": "chmod +x bin/slackin && ./bin/slackin equibit xoxp-107489284322-268731415699-270958603123-a6a096a406c3f9e4b116597bc4aae4d4 6LdOYjgUAAAAAMkrXaqhgGqJaQzDPMAf6DIYZHM2 6LdOYjgUAAAAACQj-qmIhrju482E17tSiA4sh8AK"
+    "start": "chmod +x bin/slackin && ./bin/slackin"
   },
   "now": {
     "type": "npm",
